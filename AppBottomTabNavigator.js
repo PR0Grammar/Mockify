@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 import { Home, Browse, Search, Radio, YourLibrary } from './src/components/screens';
+import configStyle from './src/config/style';
 
 const routeConfigs = {
   Home: {
@@ -21,15 +22,15 @@ const routeConfigs = {
 
 const options = {
   tabBarOptions: {
-    labelStyle: {
+    labelStyle: ({tintColor})=> ({
       fontSize: 8,
-      color: '#FFFFFF',
-    },
+      color: tintColor,
+    }),
     style: {
-      backgroundColor: '#333333',
+      backgroundColor: configStyle.GRAY,
     },
-    activeTintColor: '#84BD00',
-    inactiveTintColor: '#FFFFFF',
+    activeTintColor: configStyle.SPOTIFY_GREEN,
+    inactiveTintColor: configStyle.WHITE,
   },
   navigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, tintColor }) => {
