@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
+import configStyle from '../../config/style'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#333333',
+    backgroundColor: configStyle.GRAY,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 60,
+    height: 50,
     paddingTop: 15,
     shadowColor: '#000000',
     shadowOffset: { width: 0, height: 2},

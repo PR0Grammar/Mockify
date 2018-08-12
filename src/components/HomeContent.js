@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import SquareAlbumCard from './common/SquareAlbumCard';
+import RowHeader from './common/RowHeaders/RowHeader'
 import styles from './styles/HomeContent.component.style.js';
 
 class HomeContent extends Component {
@@ -9,9 +11,21 @@ class HomeContent extends Component {
   render() {
     return(
       <View style={styles.container}>
-        <Text style={{color:'#FFFFFF', fontSize: 30}}>
-          Home
-        </Text>
+        <RowHeader
+          header='More of what you like'
+          subHeader='Hear a little bit of everything you love.'
+        />
+        <SquareAlbumCard />
+        <RowHeader
+          header='More of what you like'
+          subHeader='Hear a little bit of everything you love.'
+        />
+        <SquareAlbumCard />
+        <RowHeader
+          header='More of what you like'
+          subHeader='Hear a little bit of everything you love.'
+        />
+        <SquareAlbumCard />
       </View>
     );
   }
