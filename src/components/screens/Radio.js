@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import styles from '../styles/Home.component.style';
 
-class Home extends Component {
+class Radio extends Component {
   static navigationOptions = {
-    title: 'Home',
+    title: 'Radio',
     headerStyle: {
       backgroundColor: '#333333'
     },
@@ -25,11 +25,11 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <Text style={{color:'#FFFFFF'}}>
-          Home
+          Radio
         </Text>
       </View>
     );
   }
 }
 
-export { Home };
+export { Radio };

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import styles from '../styles/Home.component.style';
 
-class Home extends Component {
+class Browse extends Component {
   static navigationOptions = {
-    title: 'Home',
+    title: 'Browse',
     headerStyle: {
       backgroundColor: '#333333'
     },
@@ -25,11 +25,11 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <Text style={{color:'#FFFFFF'}}>
-          Home
+          Browse
         </Text>
       </View>
     );
   }
 }
 
-export { Home };
+export { Browse };
