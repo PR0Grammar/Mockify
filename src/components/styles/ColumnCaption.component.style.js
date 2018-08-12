@@ -2,9 +2,8 @@ import { StyleSheet } from 'react-native';
 import configStyle from '../../config/style';
 
 export default StyleSheet.create({
-  container: {
-    backgroundColor: configStyle.BLACK,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
+  caption: {
+    fontSize:20,
+    color:configStyle.WHITE,
+  },
 });

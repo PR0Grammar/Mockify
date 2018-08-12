@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import SquareAlbumCard from './common/SquareAlbumCard';
-import RowHeader from './common/RowHeaders/RowHeader'
+import { ScrollView, Text } from 'react-native';
+import { RowHeader, ContentScrollRow } from './common';
 import styles from './styles/HomeContent.component.style.js';
 
 class HomeContent extends Component {
@@ -10,23 +9,23 @@ class HomeContent extends Component {
   }
   render() {
     return(
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <RowHeader
           header='More of what you like'
           subHeader='Hear a little bit of everything you love.'
         />
-        <SquareAlbumCard />
+        <ContentScrollRow/>
         <RowHeader
           header='More of what you like'
           subHeader='Hear a little bit of everything you love.'
         />
-        <SquareAlbumCard />
+        <ContentScrollRow/>
         <RowHeader
           header='More of what you like'
           subHeader='Hear a little bit of everything you love.'
         />
-        <SquareAlbumCard />
-      </View>
+        <ContentScrollRow/>
+      </ScrollView>
     );
   }
 }

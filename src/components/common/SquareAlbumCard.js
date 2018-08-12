@@ -11,4 +11,4 @@ const SquareAlbumCard = () => {
   );
 }
 
-export default SquareAlbumCard;
+export { SquareAlbumCard };

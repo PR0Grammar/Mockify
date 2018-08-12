@@ -1,10 +1,12 @@
 import { StyleSheet } from 'react-native';
-import configStyle from '../../config/style';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: configStyle.BLACK,
+    display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingRight: 5,
+    paddingLeft: 5,
   }
 });

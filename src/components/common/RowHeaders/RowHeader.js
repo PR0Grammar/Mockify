@@ -13,4 +13,4 @@ const RowHeader = (props) => {
   );
 }
 
-export default RowHeader;
+export { RowHeader };
