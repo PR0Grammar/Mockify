@@ -1,12 +1,19 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { Image, View, Text } from 'react-native';
 import styles from '../styles/SquareAlbumCard.component.style';
 
-const SquareAlbumCard = () => {
+const SquareAlbumCard = (props) => {
+  if(props.imgUrl === undefined) {
+    return(
+      <View style={styles.loadingContainer}>
+        <Text>Loading Awesomeness...</Text>
+      </View>
+    );
+  }
   return(
     <Image
       style={styles.container}
-      source={require('../../public/img/musical-note.png')}
+      source={{uri: props.imgUrl}}
     />
   );
 }
