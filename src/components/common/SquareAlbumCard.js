@@ -6,7 +6,7 @@ const SquareAlbumCard = (props) => {
   if(props.imgUrl === undefined) {
     return(
       <View style={styles.loadingContainer}>
-        <Text>Loading Awesomeness...</Text>
+        <Text style={styles.loadingText}>{'Loading\nAwesomeness'}</Text>
       </View>
     );
   }
