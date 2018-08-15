@@ -4,7 +4,6 @@ import configStyle from '../../config/style';
 export default StyleSheet.create({
   container: {
     backgroundColor: configStyle.BLACK,
-    justifyContent: 'center',
-    alignItems: 'center',
+
   }
 });

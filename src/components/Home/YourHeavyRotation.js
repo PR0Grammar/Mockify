@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { View } from 'react-native';
 import { RowHeader, ContentScrollRow } from '../common';
 
-class MoreOfWhatYouLike extends Component {
+class YourHeavyRotation extends Component {
   constructor(props){
     super(props);
 
@@ -16,8 +16,7 @@ class MoreOfWhatYouLike extends Component {
     return(
       <View>
         <RowHeader
-          header='More of what you like'
-          subHeader='Hear a little bit of everything you love'
+          header='Your Heavy Rotation'
         />
         <ContentScrollRow/>
       </View>
@@ -26,4 +25,4 @@ class MoreOfWhatYouLike extends Component {
 
 }
 
-export default MoreOfWhatYouLike;
+export default YourHeavyRotation;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import styles from '../../styles/ColumnCaption.component.style';
+import styles from '../styles/ColumnCaption.component.style';
 
 const ColumnCaption = () => {
   return(

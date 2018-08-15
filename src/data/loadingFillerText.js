@@ -1,5 +1,6 @@
 export default [
-    'Awaiting Great Content',
-    'Loading Awesomeness',
-    'Wait for it'
+    'Awaiting\nGreat\nContent',
+    'Loading\nAwesomeness',
+    'Anticipate\nthe\nmelody',
+    'Incoming\nJams',
 ];

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image, View, Text } from 'react-native';
-import styles from '../styles/SquareAlbumCard.component.style';
+import styles from '../styles/CircleAlbumCard.component.style';
 import loadingText from '../../data/loadingFillerText';
 
-const SquareAlbumCard = (props) => {
+const CircleAlbumCard = (props) => {
   if(props.imgUrl === undefined) {
     return(
       <View style={styles.loadingContainer}>
@@ -19,4 +19,4 @@ const SquareAlbumCard = (props) => {
   );
 }
 
-export { SquareAlbumCard };
+export { CircleAlbumCard };

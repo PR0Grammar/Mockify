@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Header } from '../common';
-import HomeContent from '../HomeContent';
+import HomeContent from '../Home/HomeContent';
 
 class Home extends Component {
   constructor(props){
