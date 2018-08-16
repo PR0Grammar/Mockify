@@ -1,7 +1,7 @@
 export default {
-  SPOTIFY_GREEN: '#84BD00',
+  SPOTIFY_GREEN: '#1DB954',
   WHITE: '#FFFFFF',
-  BLACK: '#000000',
+  BLACK: '#191414',
   GRAY: '#212121',
   TEXT_GRAY: '#535353',
 }
