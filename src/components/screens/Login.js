@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Button, Text } from 'react-native';
+import { UserInputField, HamburgerButton, BackButton } from '../common';
+import styles from '../styles/Login.component.style';
 
 class Login extends Component {
     constructor(props){
@@ -8,11 +10,15 @@ class Login extends Component {
 
     render() {
         return (
-            <View style={{flex:1}}>
-                <Text>WORKS!!!</Text>
-                <Button 
-                title='LOG IN'
-                onPress={() => this.props.navigation.navigate('AppStack')}
+            <View style={styles.container}>
+                <BackButton onPress={() => this.props.navigation.goBack()} />
+                <UserInputField
+
+                />
+                <UserInputField/>
+                <HamburgerButton
+                    text='LOG IN'
+                    small={true}
                 />
             </View>
         );

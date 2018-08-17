@@ -14,9 +14,7 @@ const routeConfigs = {
     Login: {
         screen: Login,
         navigationOptions: {
-            headerStyle: {
-                backgroundColor: 'transparent'
-            }
+            header: null
         },
     },
 }
