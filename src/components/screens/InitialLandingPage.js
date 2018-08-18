@@ -7,7 +7,10 @@ class InitialLandingPage extends Component {
 
     render() {
         return(
-            <View style={styles.mainContainer}>
+            <ImageBackground
+            style={{display:'flex',flex:1, height: undefined, width: undefined, alignSelf:'stretch', resizeMode:'contain' }}
+            source={{uri: 'http://www.devicers.com/wp-content/uploads/GIF-01-.gif'}}
+            >
                 <View style={styles.logoContainer}>
                     <LogoText />
                 </View>
@@ -23,7 +26,7 @@ class InitialLandingPage extends Component {
                     onPress={() => this.props.navigation.navigate('Login')} 
                     />
                 </View>
-            </View>
+            </ImageBackground>
         );
     }
 }

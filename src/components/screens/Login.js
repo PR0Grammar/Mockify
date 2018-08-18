@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import {LoginForm, LoginHeader} from '../Login'
+import {LoginForm, LoginHeader, LoginBackgroundContainer} from '../Login'
 import styles from '../styles/Login.component.style';
 
 class Login extends Component {
@@ -10,10 +9,10 @@ class Login extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <LoginBackgroundContainer>
                 <LoginHeader />
                 <LoginForm />
-            </View>
+            </LoginBackgroundContainer>
         );
     }
 } 

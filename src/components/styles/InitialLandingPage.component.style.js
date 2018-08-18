@@ -17,7 +17,6 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-end',
-        backgroundColor: configStyle.BLACK,
         margin: 30,
     }
 });
