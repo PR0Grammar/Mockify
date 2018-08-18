@@ -7,3 +7,5 @@ export * from './HamburgerButton';
 export * from './LogoText';
 export * from './UserInputField';
 export * from './BackButton';
+export * from './FormHeader';
+export * from './InputHeader';

@@ -54,6 +54,7 @@
 		0B929BBDBDAF43C99315C670 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C525689EEB24B29B300612C /* SimpleLineIcons.ttf */; };
 		D2F67FFBBE664981BDE7F2A7 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13E7CFBC40674DE39E6DE986 /* Zocial.ttf */; };
 		207AB1082D6649F49474AFFE /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAB96D181F884F1B911D36ED /* Montserrat-Bold.ttf */; };
+		50252CD676FF4A76A94204A0 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB6C6FA15EAE4D8FB268C73E /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -377,6 +378,7 @@
 		7C525689EEB24B29B300612C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		13E7CFBC40674DE39E6DE986 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AAB96D181F884F1B911D36ED /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; name = "Montserrat-Bold.ttf"; path = "../src/public/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BB6C6FA15EAE4D8FB268C73E /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBold.ttf"; path = "../src/public/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -660,6 +662,7 @@
 				7C525689EEB24B29B300612C /* SimpleLineIcons.ttf */,
 				13E7CFBC40674DE39E6DE986 /* Zocial.ttf */,
 				AAB96D181F884F1B911D36ED /* Montserrat-Bold.ttf */,
+				BB6C6FA15EAE4D8FB268C73E /* Montserrat-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1127,6 +1130,7 @@
 				0B929BBDBDAF43C99315C670 /* SimpleLineIcons.ttf in Resources */,
 				D2F67FFBBE664981BDE7F2A7 /* Zocial.ttf in Resources */,
 				207AB1082D6649F49474AFFE /* Montserrat-Bold.ttf in Resources */,
+				50252CD676FF4A76A94204A0 /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

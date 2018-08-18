@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Button, Text } from 'react-native';
-import { UserInputField, HamburgerButton, BackButton } from '../common';
+import { View } from 'react-native';
+import {LoginForm, LoginHeader} from '../Login'
 import styles from '../styles/Login.component.style';
 
 class Login extends Component {
@@ -11,15 +11,8 @@ class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <BackButton onPress={() => this.props.navigation.goBack()} />
-                <UserInputField
-
-                />
-                <UserInputField/>
-                <HamburgerButton
-                    text='LOG IN'
-                    small={true}
-                />
+                <LoginHeader />
+                <LoginForm />
             </View>
         );
     }
