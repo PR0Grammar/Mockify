@@ -4,7 +4,7 @@ import configStyle from '../../config/style';
 export default StyleSheet.create({
     text: {
         fontSize: 35,
-        fontFamily: 'Montserrat-Bold',
+        fontFamily: 'Montserrat-SemiBold',
         color: configStyle.WHITE
     },
 });
