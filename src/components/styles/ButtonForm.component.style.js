@@ -14,5 +14,5 @@ export default StyleSheet.create({
         fontSize: 14,
         fontFamily: 'Montserrat',
         paddingBottom: 5,
-    }
+    },
 })
