@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import { FormHeader, InputHeader, UserInputField, HamburgerButton } from '../common';
 import styles from '../styles/LoginForm.component.style';
 import configStyle from '../../config/style';
@@ -14,10 +14,14 @@ class LoginForm extends Component {
         return(
             <View style={styles.masterContainer}>
                 <View style={styles.formContainer}>
-                    <InputHeader text={'Email or username'} />
-                    <UserInputField />
-                    <InputHeader text={'Password'} />
-                    <UserInputField secure={true}/>
+                    <View style={styles.inputContainer}>
+                        <InputHeader text={'Email or username'} />
+                        <UserInputField />
+                    </View>
+                    <View style={styles.inputContainer}>
+                        <InputHeader text={'Password'} />
+                        <UserInputField secure={true}/>
+                    </View>
                 </View>
                 <View style={styles.buttonContainer}>
                     <HamburgerButton
@@ -28,6 +32,14 @@ class LoginForm extends Component {
                         disabled={false}
                         onPress={() => this.props.navigation.navigate('AppStack')}
                     />
+                </View>
+                <View style={styles.loginHelpContainer}>
+                    <Text 
+                        style={styles.loginHelpText}
+                        onPress={() => Linking.openURL('https://support.spotify.com/us/article/recover-your-account/')}
+                    >
+                        { 'Having trouble logging in? Get help here.'}
+                    </Text>
                 </View>
             </View>
         );

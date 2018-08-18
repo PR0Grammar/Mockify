@@ -10,7 +10,7 @@ import configStyle from '../../config/style';
 
 const BackButton = (props) => {
     return(
-        <View style={{width:50}}>
+        <View style={{width:50, margin:10,}}>
             <Icon name={'keyboard-arrow-left'} size={40} color={configStyle.WHITE} onPress={props.onPress}/>
         </View>
     );

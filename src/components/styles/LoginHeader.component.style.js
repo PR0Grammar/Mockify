@@ -6,7 +6,8 @@ export default StyleSheet.create({
         flexDirection: 'column',
     },
     formHeaderContainer: {
-        marginTop: 15,
+        marginTop: 20,
+        marginBottom: 20,
         justifyContent: 'center',
         alignItems:'center',
     },
