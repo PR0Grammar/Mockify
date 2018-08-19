@@ -56,4 +56,4 @@ buck-out/
 *.jsbundle
 
 #Config files
-src/config/secrets.json
+config/env.json

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import configStyle from '../../config/style';
+import configStyle from '../../../config/style';
 
 export default StyleSheet.create({
   subHeader: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import configStyle from '../../config/style';
+import configStyle from '../../../config/style';
 import styles from '../styles/HamburgerButton.component.style';
 
 /*

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, View, Text } from 'react-native';
 import styles from '../styles/SquareAlbumCard.component.style';
-import loadingText from '../../data/loadingFillerText';
+import loadingText from '../../../config/loadingFillerText';
 
 const SquareAlbumCard = (props) => {
   if(props.imgUrl === undefined) {

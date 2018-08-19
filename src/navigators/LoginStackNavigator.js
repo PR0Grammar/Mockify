@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { InitialLandingPage, Login } from '../components/screens';
-import configStyle from '../config/style';
+import configStyle from '../../config/style';
 
 
 const routeConfigs = {

@@ -1,10 +1,36 @@
 import React, {Component} from 'react';
-import { View, ImageBackground } from 'react-native';
+import { Platform, Linking, View, ImageBackground } from 'react-native';
 import styles from '../styles/InitialLandingPage.component.style'
-import { HamburgerButton, LogoText } from '../common';
-import { ButtonForm } from '../InitialLandingPage';
+import { LogoText, ButtonForm } from '../InitialLandingPage';
+import queryString from 'query-string';
 
 class InitialLandingPage extends Component {
+        
+    componentDidMount() {
+        if (Platform.OS === 'android') {
+            Linking.getInitialURL().then(url => {
+                if(url === null) return; /* Change to better check */
+                return this.navigate(url);
+            });
+        }
+    }
+
+    componentWillUnmount() {
+        Linking.removeEventListener('url', this.handleOpenURL);
+    }
+
+    handleOpenURL = (event) => {
+        this.navigate(event.url);
+    }
+
+    navigate = (url) => {
+        const { navigate } = this.props.navigation;
+        const routeName = url.includes('mockify'); /* Change to better check */
+        
+        if (routeName) {
+            navigate('AppStack');
+        };
+    }
 
     render() {
         return(

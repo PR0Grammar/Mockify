@@ -11,4 +11,4 @@ const LogoText = () => {
     );
 }
 
-export { LogoText }
+export default LogoText;

@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 import { Home, Browse, Search, Radio, YourLibrary } from '../components/screens';
-import configStyle from '../config/style';
+import configStyle from '../../config/style';
 
 const routeConfigs = {
   Home: {

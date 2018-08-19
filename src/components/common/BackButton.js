@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import configStyle from '../../config/style';
+import configStyle from '../../../config/style';
 
 /*
     Custom back button icon.

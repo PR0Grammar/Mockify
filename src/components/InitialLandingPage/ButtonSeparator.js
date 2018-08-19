@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import configStyle from '../../config/style';
+import configStyle from '../../../config/style';
 
 const ButtonSeparator = () => {
     return(

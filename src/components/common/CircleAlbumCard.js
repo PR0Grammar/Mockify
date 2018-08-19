@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, View, Text } from 'react-native';
 import styles from '../styles/CircleAlbumCard.component.style';
-import loadingText from '../../data/loadingFillerText';
+import loadingText from '../../../config/loadingFillerText';
 
 const CircleAlbumCard = (props) => {
   if(props.imgUrl === undefined) {

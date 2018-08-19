@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TextInput } from 'react-native';
 import styles from '../styles/UserInputField.component.style';
-import configStyles from '../../config/style';
+import configStyles from '../../../config/style';
 
 class UserInputField extends Component {
     constructor(props) {
