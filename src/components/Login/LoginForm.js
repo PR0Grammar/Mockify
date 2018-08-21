@@ -4,6 +4,7 @@ import { userLogin } from '../../../data';
 import { FormHeader, InputHeader, UserInputField, HamburgerButton } from '../common';
 import styles from '../styles/LoginForm.component.style';
 import configStyle from '../../../config/style';
+import env from '../../../config/env.json';
 import { withNavigation } from 'react-navigation';
 
 class LoginForm extends Component {
@@ -31,7 +32,7 @@ class LoginForm extends Component {
                         text='LOG IN'
                         small={true}
                         disabled={false}
-                        onPress={() => Linking.openURL(userLogin)}
+                        onPress={() => Linking.openURL(env.LOGIN_URL)}
                     />
                 </View>
                 <View style={styles.loginHelpContainer}>

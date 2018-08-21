@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Platform, Linking, View, ImageBackground } from 'react-native';
 import styles from '../styles/InitialLandingPage.component.style'
 import { LogoText, ButtonForm } from '../InitialLandingPage';
+import { getProfileInfo } from '../../../data';
 import queryString from 'query-string';
 
 class InitialLandingPage extends Component {
@@ -9,7 +10,7 @@ class InitialLandingPage extends Component {
     componentDidMount() {
         if (Platform.OS === 'android') {
             Linking.getInitialURL().then(url => {
-                if(url === null) return; /* Change to better check */
+                if(url === null || url === undefined) return; /* Change to better check */
                 return this.navigate(url);
             });
         }
