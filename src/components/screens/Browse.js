@@ -17,4 +17,4 @@ class Browse extends Component {
   }
 }
 
-export { Browse };
+export default Browse;

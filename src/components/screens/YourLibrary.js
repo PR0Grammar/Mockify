@@ -17,4 +17,4 @@ class YourLibrary extends Component {
   }
 }
 
-export { YourLibrary };
+export default YourLibrary;

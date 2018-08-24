@@ -17,4 +17,4 @@ class Radio extends Component {
   }
 }
 
-export { Radio };
+export default Radio;

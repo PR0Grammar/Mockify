@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import { Platform, Linking, View, ImageBackground } from 'react-native';
-import styles from '../styles/InitialLandingPage.component.style'
+import { connect } from 'react-redux';
 import { LogoText, ButtonForm } from '../InitialLandingPage';
-import { getProfileInfo } from '../../../data';
-import queryString from 'query-string';
+import * as actions from '../../actions';
+import styles from '../styles/InitialLandingPage.component.style'
+
 
 class InitialLandingPage extends Component {
         
@@ -26,9 +27,10 @@ class InitialLandingPage extends Component {
 
     navigate = (url) => {
         const { navigate } = this.props.navigation;
-        const routeName = url.includes('mockify'); /* Change to better check */
+        const routeName = url.includes('mockify://mockify/?access_token='); /* Change to better check */
         
         if (routeName) {
+            this.props.addAuthToken(url.split('?access_token=')[1]);
             navigate('AppStack');
         };
     }
@@ -48,4 +50,4 @@ class InitialLandingPage extends Component {
     }
 }
 
-export  { InitialLandingPage };
+export default connect(null, actions)(InitialLandingPage);
