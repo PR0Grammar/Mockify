@@ -7,7 +7,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.3",
+    "lodash": "^4.17.10",
     "navigation": "^5.1.0",
     "query-string": "^6.1.0",
     "react": "^16.4.1",

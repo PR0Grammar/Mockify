@@ -3,11 +3,11 @@ import { View, Text } from 'react-native';
 import styles from '../styles/ColumnSubCaption.component.style';
 
 
-const ColumnSubCaption = () => {
+const ColumnSubCaption = (props) => {
   return(
     <View>
       <Text numberOfLines={1} ellipsizeMode='tail' style={styles.subCaption}>
-        2,454,445 FOLLOWERS
+        {props.subCaption}
       </Text>
     </View>
   );
