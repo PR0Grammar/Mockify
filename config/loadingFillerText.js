@@ -8,5 +8,7 @@ export default [
     'Bringing\nBack\nBoogie',
     'Transferring\nTalent',
     'Delivering\nDank\nDisco',
-    'Dropping\nMix\nTapes'
+    'Dropping\nThe\nBeats',
+    'Importing\nGreat\nStuff',
+    'Hold\nYour\nHarmonica'
 ];

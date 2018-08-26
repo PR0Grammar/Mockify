@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { Header } from '../common'
+import configStyle from '../../../config/style';
 
 class YourLibrary extends Component {
   constructor(props){
@@ -8,10 +10,8 @@ class YourLibrary extends Component {
 
   render() {
     return (
-      <View>
-        <Text>
-          Your Library
-        </Text>
+      <View style={{flex:1, backgroundColor: configStyle.BLACK}}>
+        <Header title='Your Library' />
       </View>
     );
   }

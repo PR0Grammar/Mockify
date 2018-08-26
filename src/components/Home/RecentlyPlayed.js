@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
-import { RowHeader, ContentScrollRow } from '../common';
+import { ContentRow } from '../common';
 import { getUserRecentlyPlayed, getArtistInfo } from '../../../data';
 import { followers } from '../../../helper'
 
@@ -66,14 +65,11 @@ class RecentlyPlayed extends Component {
 
   render() {
     return(
-      <View>
-        <RowHeader
-          header='Recently Played'
-        />
-        <ContentScrollRow
-            content={this.state.mostRecentPlayed}
-        />
-      </View>
+      <ContentRow
+        header='Recently Played'
+       content={this.state.mostRecentPlayed}
+
+      />
     );
   }
 

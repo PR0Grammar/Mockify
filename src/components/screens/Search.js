@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { Header } from '../common'
+import configStyle from '../../../config/style';
 
 class Search extends Component {
   constructor(props){
@@ -8,10 +10,8 @@ class Search extends Component {
 
   render() {
     return (
-      <View>
-        <Text>
-          Search
-        </Text>
+      <View style={{flex:1, backgroundColor: configStyle.BLACK}}>
+        <Header title='Search' />
       </View>
     );
   }

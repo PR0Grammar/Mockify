@@ -4,7 +4,6 @@ import MadeForUser from './MadeForUser';
 import MoreOfWhatYouLike from './MoreOfWhatYouLike';
 import RecommendedStations from './RecommendedStations';
 import YourHeavyRotation from './YourHeavyRotation';
-import styles from '../styles/HomeContent.component.style';
 import RecentlyPlayed from './RecentlyPlayed';
 
 class HomeContent extends Component {
@@ -13,8 +12,8 @@ class HomeContent extends Component {
   }
   render() {
     return(
-      <View style={{flex:1, backgroundColor:'black'}}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <View style={{flex:1}}>
+      <ScrollView>
         <MadeForUser />
         <RecentlyPlayed />
         <YourHeavyRotation />

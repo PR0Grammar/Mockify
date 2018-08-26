@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import { View } from 'react-native';
 import axios from 'axios';
 import { connect } from 'react-redux'
-import { RowHeader, ContentScrollRow } from '../common';
+import { ContentRow } from '../common';
 import {getUserTopArtists, getUserTopTracks} from '../../../data';
 import {followers} from '../../../helper'
 
@@ -67,14 +66,11 @@ class YourHeavyRotation extends Component {
 
   render() {
     return(
-      <View>
-        <RowHeader
-          header='Your Heavy Rotation'
-        />
-        <ContentScrollRow
-          content={[...this.state.mostPlayedAlbums, ...this.state.mostPlayedArtist]}
-        />
-      </View>
+
+      <ContentRow
+        header='Your Heavy Rotation'
+        content={[...this.state.mostPlayedAlbums, ...this.state.mostPlayedArtist]}
+      />
     );
   }
 

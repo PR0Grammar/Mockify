@@ -1,11 +1,10 @@
 export * from './Header';
-export * from './RowHeaders/RowHeader';
 export * from './SquareAlbumCard';
-export * from './ContentScrollRow';
 export * from './CircleAlbumCard';
 export * from './HamburgerButton';
 export * from './UserInputField';
 export * from './BackButton';
 export * from './FormHeader';
 export * from './InputHeader';
-export * from './ChangingBackgroundContainer'
+export {default as ChangingBackgroundContainer} from './ChangingBackgroundContainer'
+export {default as ContentRow} from './ContentRow';

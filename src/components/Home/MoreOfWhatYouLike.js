@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { View } from 'react-native';
-import { RowHeader, ContentScrollRow } from '../common';
+import {ContentRow} from '../common';
 
 class MoreOfWhatYouLike extends Component {
   constructor(props){
@@ -14,13 +13,10 @@ class MoreOfWhatYouLike extends Component {
 
   render() {
     return(
-      <View>
-        <RowHeader
-          header='More of what you like'
-          subHeader='Hear a little bit of everything you love'
-        />
-        <ContentScrollRow/>
-      </View>
+      <ContentRow
+        header='More of what you like'
+       subHeader='Hear a little bit of everything you love'
+      />
     );
   }
 
