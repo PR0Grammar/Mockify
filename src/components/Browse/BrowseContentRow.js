@@ -1,19 +1,30 @@
-import React, { Component } from 'react';
-import { ContentRow } from '../common';
-
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import {ContentRow} from '../common';
 
 class BrowseContentRow extends Component {
-    constructor(props){
-        super(props);
-    }
+  constructor(props){
+    super(props);
 
-    render() {
-        return(
-            <ContentRow
-                header='Get Yo Cray On'
-            />
-        );
+    this.state = {
+
     }
+  }
+
+  render() {
+    return(
+      <ContentRow
+        header={`Get Yo' Cray On`}
+      />
+    );
+  }
 }
 
-export default BrowseContentRow;
+const mapStateToProps = (state) => {
+  return {
+    authToken: state.auth,
+  }
+}
+
+export default connect(mapStateToProps)(BrowseContentRow);
+

@@ -72,3 +72,17 @@ exports.getArtistInfo = async (token, artistId) => {
     .catch(err => console.log(err));
 }
 
+exports.getBrowseCategories = async (token) => {
+    return axios.get('https://api.spotify.com/v1/browse/categories', {
+        headers:{
+            'Authorization': `Bearer ${token}`
+        }, 
+        params:{
+            limit:50
+        }
+    })
+    .then(response => {
+        return Promise.resolve(response.data);
+    })
+    .catch(err => console.log(err));
+}
