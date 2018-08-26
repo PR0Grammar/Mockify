@@ -7,7 +7,7 @@ import {isEmpty} from 'lodash';
 /*
 
   Props:
-    content - Takes array of objects and utilizes the following properties in each obj:
+    content - Takes array of objects and utilizes the following properties in each obj if present:
               {
                 index: int,
                 isArtist: boolean,
@@ -18,6 +18,8 @@ import {isEmpty} from 'lodash';
                 albumName:'',
                 artistImgUrl: '',
                 albumImgUrl: '',
+                artistDesc: '',
+                albumDesc: '',
               }
 */
 
@@ -29,18 +31,18 @@ class ContentScrollRow extends Component {
   fillerContent() {
     return(
       <>
-        <ContentColumn/>
-        <ContentColumn artist={true}/>
-        <ContentColumn/>
-        <ContentColumn artist={true}/>
+        <ContentColumn />
+        <ContentColumn />
+        <ContentColumn />
+        <ContentColumn />
       </>
     )
   }
 
   realContent() {
     return this.props.content.map(item => {
-      return item.isArtist ? <ContentColumn key={item.index} artist={true} caption={item.artistName} imgUrl={item.artistImgUrl} /> : 
-        <ContentColumn key={item.index}caption={item.albumName} imgUrl={item.woah} />
+      return item.isArtist ? <ContentColumn key={item.index} artist={true} caption={item.artistName} subCaption={item.artistDesc} imgUrl={item.artistImgUrl} /> : 
+        <ContentColumn key={item.index} caption={item.albumName} subCaption={item.albumDesc} imgUrl={item.albumImgUrl} />
     })
     
   }

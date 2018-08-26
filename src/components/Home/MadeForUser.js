@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { View } from 'react-native';
 import { RowHeader, ContentScrollRow } from '../common';
-import { getUserProfile, getUserRecentlyPlayed } from '../../../data'
+import { getUserProfile } from '../../../data'
 
 class MadeForUser extends Component {
   constructor(props){

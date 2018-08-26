@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 import { RowHeader, ContentScrollRow } from '../common';
-import { getUserRecentlyPlayed } from '../../../data';
+import { getUserRecentlyPlayed, getArtistInfo } from '../../../data';
+import { followers } from '../../../helper'
 
 class RecentlyPlayed extends Component {
   constructor(props){
@@ -14,10 +15,22 @@ class RecentlyPlayed extends Component {
   }
 
   componentDidMount() {
-    getUserRecentlyPlayed(this.props.authToken)
-    .then((userRecentlyPlayed) => {
-        let mostRecentPlayed = [];          
-        userRecentlyPlayed.items.forEach((item, index) => {
+    this.getUserRecentlyPlayedContent()
+    .then(content => {
+      this.setState((prevState) => {
+        return {
+          mostRecentPlayed: [...prevState.mostRecentPlayed, ...content]
+        }
+      });
+    });
+  }
+
+  async getUserRecentlyPlayedContent() {
+    let mostRecentPlayed = [];          
+
+    const recentlyPlayedContent = await getUserRecentlyPlayed(this.props.authToken)
+
+    recentlyPlayedContent.items.forEach((item, index) => {
             let recentlyPlayed = {
                 index: index,
                 isArtist: undefined,
@@ -30,22 +43,25 @@ class RecentlyPlayed extends Component {
                 albumImgUrl: undefined,
             }
 
-            recentlyPlayed.isArtist = item.context === null ? true : false;
+            recentlyPlayed.isArtist = item.context === null || item.context.type != 'album' ? true : false;
             recentlyPlayed.artistId = item.track.artists[0].id;
             recentlyPlayed.albumId = item.track.album.id;
             recentlyPlayed.trackId = item.track.id;
-            recentlyPlayed.artistName = item.track.artists.map(artist => artist.name).join();
+            recentlyPlayed.artistName = item.track.artists[0].name
             recentlyPlayed.albumName = item.track.album.name;
-            recentlyPlayed.artistImgUrl = item.track.album.images[1].url + '.jpeg';
+            recentlyPlayed.albumImgUrl = item.track.album.images[1].url;
 
             mostRecentPlayed.push(recentlyPlayed)
-        });
-        this.setState((prevState) => {
-            return {
-                mostRecentPlayed: [...prevState.mostRecentPlayed, ...mostRecentPlayed]
-            }
-        })
-    });
+      });
+
+      for(item of mostRecentPlayed ){
+        const artistInfo = await getArtistInfo(this.props.authToken, item.artistId)
+        item.artistDesc = followers(artistInfo.followers.total)
+        item.artistImgUrl = artistInfo.images[1].url;
+      }
+
+      return mostRecentPlayed;
+
   }
 
   render() {

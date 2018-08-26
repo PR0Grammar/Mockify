@@ -7,7 +7,7 @@ exports.getUserProfile = async (token) => {
         }
     })
     .then(response => {
-        return response.data;
+        return Promise.resolve(response.data)
     })
     .catch(err => console.log(err));
 }
@@ -16,10 +16,14 @@ exports.getUserRecentlyPlayed = async (token) => {
     return axios.get('https://api.spotify.com/v1/me/player/recently-played', {
         headers: {
             'Authorization': `Bearer ${token}`
+        },
+        params:{
+            limit: 10,
+            offset: 3,
         }
     })
     .then(response => {
-        return response.data;
+        return Promise.resolve(response.data)
     })
     .catch(err => console.log(err));
 }
@@ -28,10 +32,43 @@ exports.getUserTopTracks = async (token) => {
     return axios.get('https://api.spotify.com/v1/me/top/tracks', {
         headers: {
             'Authorization': `Bearer ${token}`
+        },
+        params: {
+            limit: 5,
+            offset: 3,
         }
     })
     .then(response => {
-        return response.data;
+        return Promise.resolve(response.data)
     })
     .catch(err => console.log(err));
 }
+
+exports.getUserTopArtists = async (token) => {
+    return axios.get('https://api.spotify.com/v1/me/top/artists', {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        },
+        params: {
+            limit: 5,
+            offset: 3,
+        }
+    })
+    .then(response => {
+        return Promise.resolve(response.data)
+    })
+    .catch(err => console.log(err));
+}
+
+exports.getArtistInfo = async (token, artistId) => {
+    return axios.get(`https://api.spotify.com/v1/artists/${artistId}`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        return Promise.resolve(response.data);
+    })
+    .catch(err => console.log(err));
+}
+

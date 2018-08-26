@@ -5,7 +5,7 @@ import styles from '../styles/ColumnCaption.component.style';
 const ColumnCaption = (props) => {
   return(
     <View>
-      <Text style={styles.caption}>
+      <Text numberOfLines={2} ellipsizeMode='tail' style={styles.caption}>
         {props.caption}
       </Text>
     </View>

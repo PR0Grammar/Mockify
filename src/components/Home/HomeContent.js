@@ -17,9 +17,9 @@ class HomeContent extends Component {
       <ScrollView contentContainerStyle={styles.container}>
         <MadeForUser />
         <RecentlyPlayed />
+        <YourHeavyRotation />
         <MoreOfWhatYouLike />
         <RecommendedStations />
-        <YourHeavyRotation />
       </ScrollView>
       </View>
     );

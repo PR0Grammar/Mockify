@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Animated } from 'react-native';
-import styles from '../styles/LoginBackgroundContainer.component.style';
+import styles from '../styles/ChangingBackgroundContainer.component.style';
 
-class LoginBackgroundContainer extends Component {
+class ChangingBackgroundColor extends Component {
   
   componentWillMount() {
     this.animatedValue = new Animated.Value(0);
@@ -13,7 +13,7 @@ class LoginBackgroundContainer extends Component {
      Animated.sequence([
          Animated.timing(this.animatedValue, {
           toValue: 300,
-          duration: 8000
+          duration: 8000,
         }),
         Animated.timing(this.animatedValue, {
           toValue:0,
@@ -42,4 +42,4 @@ class LoginBackgroundContainer extends Component {
   }
 }
 
-export default LoginBackgroundContainer;
+export default ChangingBackgroundColor;

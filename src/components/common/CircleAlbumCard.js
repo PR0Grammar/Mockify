@@ -13,7 +13,7 @@ const CircleAlbumCard = (props) => {
   }
   return(
     <Image
-      style={styles.container}
+      style={styles.imgContainer}
       source={{uri: props.imgUrl}}
     />
   );

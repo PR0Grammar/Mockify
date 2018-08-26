@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {LoginForm, LoginHeader, LoginBackgroundContainer} from '../Login'
+import {LoginForm, LoginHeader} from '../Login'
 import styles from '../styles/Login.component.style';
+import ChangingBackgroundColor from '../common/ChangingBackgroundContainer';
 
 class Login extends Component {
     constructor(props){
@@ -9,10 +10,10 @@ class Login extends Component {
 
     render() {
         return (
-            <LoginBackgroundContainer>
+            <ChangingBackgroundColor>
                 <LoginHeader />
                 <LoginForm />
-            </LoginBackgroundContainer>
+            </ChangingBackgroundColor>
         );
     }
 } 

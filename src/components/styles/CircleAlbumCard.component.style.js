@@ -5,13 +5,12 @@ export default StyleSheet.create({
   loadingContainer: {
     display: 'flex',
     justifyContent: 'center',
-    height: 128,
-    width: 128,
+    alignItems: 'center',
+    height: 150,
+    width: 150,
     borderColor: configStyle.TEXT_GRAY,
     borderWidth: 0.5,
     borderRadius: 64,
-    paddingLeft: 5,
-    paddingRight: 5,
   },
   loadingText: {
     color: configStyle.WHITE,
@@ -19,9 +18,9 @@ export default StyleSheet.create({
     fontWeight: '600',
   },
   imgContainer: {
-    height:128,
-    width: 128,
-    borderRadius: 64,
-    resizeMode: 'contain',
+    height:150,
+    width: 150,
+    borderRadius: 75,
+    resizeMode: 'cover',
   }
 })

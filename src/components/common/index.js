@@ -8,3 +8,4 @@ export * from './UserInputField';
 export * from './BackButton';
 export * from './FormHeader';
 export * from './InputHeader';
+export * from './ChangingBackgroundContainer'

@@ -8,6 +8,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     marginRight: 10,
     marginLeft: 10,
-    width:128,
+    width: 150,
   }
 });
