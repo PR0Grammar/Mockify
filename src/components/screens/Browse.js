@@ -12,8 +12,8 @@ class Browse extends Component {
   render() {
     return (
       <View style={{flex:1, backgroundColor: configStyle.BLACK}}>
+        <Header title='Browse' />
         <ScrollView>
-          <Header title='Browse' />
           <BrowseContentRow />
           <BrowseCategoryList/>
         </ScrollView>

@@ -42,7 +42,7 @@ class SplashPage extends Component {
     render() {
         return(
             <View style={{ flex:1, backgroundColor: configStyle.BLACK, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <ActivityIndicator color='green' size='large' />
+                <ActivityIndicator color={configStyle.SPOTIFY_GREEN} size='large' />
             </View>
         );
     }

@@ -8,3 +8,4 @@ export * from './FormHeader';
 export * from './InputHeader';
 export {default as ChangingBackgroundContainer} from './ChangingBackgroundContainer'
 export {default as ContentRow} from './ContentRow';
+export {default as BottomMusicBar} from './BottomMusicBar';
