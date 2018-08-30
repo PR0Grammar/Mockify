@@ -8,9 +8,9 @@ class BottomMusicBar extends Component {
     render() {
         return(
             <View style={styles.container}>
-                <Icon name={'chevron-thin-up'} color={configStyle.WHITE} size={30} />
+                <Icon name={'chevron-thin-up'} color={configStyle.WHITE} size={20} style={styles.icon} />
                 <Text style={{color:'white'}}> MUSIC </Text>
-                <Icon name={'controller-play'} color={configStyle.WHITE} size={30} />
+                <Icon name={'controller-play'} color={configStyle.WHITE} size={30} style={styles.icon}/>
             </View>
         )
     }

@@ -15,7 +15,8 @@ export default StyleSheet.create({
         height: 50,
         width: width, 
         backgroundColor: configStyle.GRAY, 
-        alignItems:'center', 
-        justifyContent: 'center',
+    },
+    icon: {
+        margin: 20,
     }
 })
