@@ -11,7 +11,7 @@ import configStyle from '../../../config/style';
 const DotMenu = (props) => {
     return(
         <View style={{margin:5,}}>
-            <Icon name={'dots-three-vertical'} size={30} color={configStyle.WHITE} onPress={props.onPress}/>
+            <Icon name={'dots-three-vertical'} size={20} color={configStyle.WHITE} onPress={props.onPress}/>
         </View>
     );
 }

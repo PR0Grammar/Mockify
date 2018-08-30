@@ -41,8 +41,8 @@ class ContentScrollRow extends Component {
 
   realContent() {
     return this.props.content.map(item => {
-      return item.isArtist ? <ContentColumn key={item.index} artist={true} caption={item.artistName} subCaption={item.artistDesc} imgUrl={item.artistImgUrl} /> : 
-        <ContentColumn key={item.index} caption={item.albumName} subCaption={item.albumDesc} imgUrl={item.albumImgUrl} />
+      return item.isArtist ? <ContentColumn key={item.index} artistId={item.artistId} artist={true} caption={item.artistName} subCaption={item.artistDesc} imgUrl={item.artistImgUrl} /> : 
+        <ContentColumn key={item.index} albumId={item.albumId} caption={item.albumName} subCaption={item.albumDesc} imgUrl={item.albumImgUrl} />
     })
     
   }
@@ -56,4 +56,4 @@ class ContentScrollRow extends Component {
   }
 }
 
-export { ContentScrollRow }
+export default ContentScrollRow;

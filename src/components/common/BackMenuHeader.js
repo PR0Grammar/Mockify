@@ -7,7 +7,7 @@ import DotMenu from './DotMenu';
 const BackMenuHeader = (props) => {
     return(
       <View style={styles.container}>
-        <BackButton />
+        <BackButton onPress={props.backOnPress} />
         <DotMenu />
       </View>
     );

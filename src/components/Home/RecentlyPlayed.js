@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { ContentRow } from '../common';
-import { getUserRecentlyPlayed, getArtistInfo } from '../../../data';
+import { getUserRecentlyPlayed, getArtistInfoById } from '../../../data';
 import { followers } from '../../../helper'
 import { withNavigation } from 'react-navigation';
 
@@ -56,7 +56,7 @@ class RecentlyPlayed extends Component {
       });
 
       for(item of mostRecentPlayed ){
-        const artistInfo = await getArtistInfo(this.props.authToken, item.artistId)
+        const artistInfo = await getArtistInfoById(this.props.authToken, item.artistId)
         item.artistDesc = followers(artistInfo.followers.total)
         item.artistImgUrl = artistInfo.images[1].url;
       }

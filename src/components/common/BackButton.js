@@ -11,7 +11,7 @@ import configStyle from '../../../config/style';
 const BackButton = (props) => {
     return(
         <View style={{margin:5,}}>
-            <Icon name={'chevron-thin-left'} size={30} color={configStyle.WHITE} onPress={props.onPress}/>
+            <Icon name={'chevron-thin-left'} size={20} color={configStyle.WHITE} onPress={props.onPress}/>
         </View>
     );
 }

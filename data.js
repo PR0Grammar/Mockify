@@ -60,7 +60,7 @@ exports.getUserTopArtists = async (token) => {
     .catch(err => console.log(err));
 }
 
-exports.getArtistInfo = async (token, artistId) => {
+exports.getArtistInfoById = async (token, artistId) => {
     return axios.get(`https://api.spotify.com/v1/artists/${artistId}`, {
         headers: {
             'Authorization': `Bearer ${token}`
@@ -70,6 +70,17 @@ exports.getArtistInfo = async (token, artistId) => {
         return Promise.resolve(response.data);
     })
     .catch(err => console.log(err));
+}
+
+exports.getAlbumInfoById = async (token, albumId) => {
+    return axios.get(`https://api.spotify.com/v1/albums/${albumId}`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        return Promise.resolve(response.data)
+    })
 }
 
 exports.getBrowseCategories = async (token) => {

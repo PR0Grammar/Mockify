@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import { RowHeader } from './RowHeaders/RowHeader';
-import { ContentScrollRow } from './ContentScrollRow';
+import ContentScrollRow from './ContentScrollRow';
 import styles from '../styles/ContentRow.component.style'
 
 const ContentRow = (props) => {
