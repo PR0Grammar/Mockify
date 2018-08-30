@@ -1,12 +1,13 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
-import { Home, Browse, Search, Radio, YourLibrary } from '../components/screens';
+import { Browse, Search, Radio, YourLibrary } from '../components/screens';
+import HomeStackNavigator from './HomeStackNavigator'
 import configStyle from '../../config/style';
 
 const routeConfigs = {
   Home: {
-    screen: Home,
+    screen: HomeStackNavigator,
     tabBarIcon: ({tintColor}) => (
       <Icon name='home' size={12}/>
     ),

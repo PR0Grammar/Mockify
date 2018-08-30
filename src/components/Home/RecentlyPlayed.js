@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { ContentRow } from '../common';
 import { getUserRecentlyPlayed, getArtistInfo } from '../../../data';
 import { followers } from '../../../helper'
+import { withNavigation } from 'react-navigation';
+
 
 class RecentlyPlayed extends Component {
   constructor(props){
@@ -67,8 +69,7 @@ class RecentlyPlayed extends Component {
     return(
       <ContentRow
         header='Recently Played'
-       content={this.state.mostRecentPlayed}
-
+        content={this.state.mostRecentPlayed}
       />
     );
   }
@@ -81,4 +82,4 @@ const mapStateToProps = (state) =>{
     }
   }
   
-  export default connect(mapStateToProps)(RecentlyPlayed);
+  export default withNavigation(connect(mapStateToProps)(RecentlyPlayed));

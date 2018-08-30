@@ -8,12 +8,12 @@ import configStyle from '../../../config/style';
     View provided to prevent row overlap
 */
 
-const BackButton = (props) => {
+const DotMenu = (props) => {
     return(
         <View style={{margin:5,}}>
-            <Icon name={'chevron-thin-left'} size={30} color={configStyle.WHITE} onPress={props.onPress}/>
+            <Icon name={'dots-three-vertical'} size={30} color={configStyle.WHITE} onPress={props.onPress}/>
         </View>
     );
 }
 
-export default BackButton
+export default DotMenu
