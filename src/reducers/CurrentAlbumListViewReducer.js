@@ -1,10 +1,11 @@
-import {CHANGE_ALBUM_LIST_ARTIST_ID,CHANGE_ALBUM_LIST_ALBUM_ID,CHANGE_ALBUM_LIST_ALBUM_NAME, CHANGE_ALBUM_LIST_ARTIST_NAME, CHANGE_ALBUM_LIST_TRACK_LIST} from '../constants/actionTypes';
+import {CHANGE_ALBUM_LIST_ALBUM_IMG_URL,CHANGE_ALBUM_LIST_ARTIST_ID,CHANGE_ALBUM_LIST_ALBUM_ID,CHANGE_ALBUM_LIST_ALBUM_NAME, CHANGE_ALBUM_LIST_ARTIST_NAME, CHANGE_ALBUM_LIST_TRACK_LIST} from '../constants/actionTypes';
 
 const INIT_STATE = {
     artistId: '',
     albumId: '',
     albumName: '',
     albumArtistName: '',
+    albumImgUrl:'',
     trackList: [
         {
             trackName: '',
@@ -33,9 +34,13 @@ export default (state = INIT_STATE, action) => {
             return Object.assign({}, state, {
                 albumArtistName: action.payload
             });
+        case CHANGE_ALBUM_LIST_ALBUM_IMG_URL:
+            return Object.assign({}, state, {
+                albumImgUrl: action.payload
+            })
         case CHANGE_ALBUM_LIST_TRACK_LIST: 
             return Object.assign({}, state, {
-                trackList: actions.payload
+                trackList: action.payload
             });
         default:
             return state;

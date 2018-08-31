@@ -31,7 +31,11 @@ class ContentColumn extends Component  {
   async updateCurrentAlbumSongListView() {
     const albumInfo =  await getAlbumInfoById(this.props.authToken, this.props.albumId);
 
-    this.props.changeAlbumListAlbumName(albumInfo.name)
+    this.props.changeAlbumListArtistId(albumInfo.artists[0].id);
+    this.props.changeAlbumListAlbumId(albumInfo.id);
+    this.props.changeAlbumListAlbumName(albumInfo.name);
+    this.props.changeAlbumListArtistName(albumInfo.artists[0].name);
+    this.props.changeAlbumListImgUrl(albumInfo.images[1].url)
 
   }
 
