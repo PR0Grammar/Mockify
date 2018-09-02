@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { ContentRow } from '../common';
 import { getUserRecentlyPlayed, getArtistInfoById } from '../../../data';
-import { followers } from '../../../helper'
+import { followers, removeRepeatedObjs } from '../../../helper'
 import { withNavigation } from 'react-navigation';
 
 
@@ -28,40 +28,40 @@ class RecentlyPlayed extends Component {
 
   async getUserRecentlyPlayedContent() {
     let mostRecentPlayed = [];          
+    let index = 0;
 
-    const recentlyPlayedContent = await getUserRecentlyPlayed(this.props.authToken)
+    const recentlyPlayedContent = await getUserRecentlyPlayed(this.props.authToken).then(content => removeRepeatedObjs(content.items, 'context.uri', 20))
 
-    recentlyPlayedContent.items.forEach((item, index) => {
-            let recentlyPlayed = {
-                index: index,
-                isArtist: undefined,
-                artistId: undefined,
-                albumId: undefined,
-                trackId: undefined,
-                artistName: undefined,
-                albumName: undefined,
-                artistImgUrl: undefined,
-                albumImgUrl: undefined,
-            }
+    for(item of recentlyPlayedContent){
+      let artistInfo = await getArtistInfoById(this.props.authToken, item.track.artists[0].id)
 
-            recentlyPlayed.isArtist = item.context === null || item.context.type != 'album' ? true : false;
-            recentlyPlayed.artistId = item.track.artists[0].id;
-            recentlyPlayed.albumId = item.track.album.id;
-            recentlyPlayed.trackId = item.track.id;
-            recentlyPlayed.artistName = item.track.artists[0].name
-            recentlyPlayed.albumName = item.track.album.name;
-            recentlyPlayed.albumImgUrl = item.track.album.images[1].url;
-
-            mostRecentPlayed.push(recentlyPlayed)
-      });
-
-      for(item of mostRecentPlayed ){
-        const artistInfo = await getArtistInfoById(this.props.authToken, item.artistId)
-        item.artistDesc = followers(artistInfo.followers.total)
-        item.artistImgUrl = artistInfo.images[1].url;
+      let recentlyPlayed = {
+          index: index++,
+          isArtist: undefined,
+          artistId: undefined,
+          albumId: undefined,
+          trackId: undefined,
+          artistName: undefined,
+          albumName: undefined,
+          artistImgUrl: undefined,
+          albumImgUrl: undefined,
       }
 
-      return mostRecentPlayed;
+      recentlyPlayed.isArtist = item.context === null || item.context.type != 'album' ? true : false;
+      recentlyPlayed.artistId = item.track.artists[0].id;
+      recentlyPlayed.albumId = item.track.album.id;
+      recentlyPlayed.trackId = item.track.id;
+      recentlyPlayed.artistName = item.track.artists[0].name
+      recentlyPlayed.albumName = item.track.album.name;
+      recentlyPlayed.albumImgUrl = item.track.album.images[1].url;
+      recentlyPlayed.artistImgUrl = artistInfo.images[1].url
+      recentlyPlayed.artistDesc = followers(artistInfo.followers.total)
+
+      mostRecentPlayed.push(recentlyPlayed)
+      
+    }
+
+    return mostRecentPlayed;
 
   }
 

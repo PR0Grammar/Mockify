@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import { View, Text } from 'react-native';
-import { connect } from 'react-redux'
+import { View, ScrollView } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import {BackMenuHeader} from '../common';
-import {AlbumInfoColumn} from '../AlbumSongList'
+import {AlbumInfoColumn, AlbumTrackList} from '../AlbumSongList'
 import configStyle from '../../../config/style'
 
-class AlbumSongList extends Component {
+class AlbumPage extends Component {
 
     render() {
         return(
@@ -14,16 +13,15 @@ class AlbumSongList extends Component {
                 <BackMenuHeader 
                     backOnPress={() => this.props.navigation.goBack()}
                 />
-                <AlbumInfoColumn />
+                <ScrollView>
+                    <AlbumInfoColumn />
+                    <AlbumTrackList />
+                </ScrollView>
             </View>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        albumName: state.albumSongList.albumName,
-    }
-}
 
-export default withNavigation(connect(mapStateToProps)(AlbumSongList));
+
+export default withNavigation(AlbumPage);

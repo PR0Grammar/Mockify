@@ -30,12 +30,19 @@ class ContentColumn extends Component  {
 
   async updateCurrentAlbumSongListView() {
     const albumInfo =  await getAlbumInfoById(this.props.authToken, this.props.albumId);
-
+    
     this.props.changeAlbumListArtistId(albumInfo.artists[0].id);
     this.props.changeAlbumListAlbumId(albumInfo.id);
     this.props.changeAlbumListAlbumName(albumInfo.name);
     this.props.changeAlbumListArtistName(albumInfo.artists[0].name);
     this.props.changeAlbumListImgUrl(albumInfo.images[1].url)
+    this.props.changeAlbumListTrackList(albumInfo.tracks.items.map(track => {
+      return {
+        trackName: track.name,
+        artistNames: track.artists.map(artist=> artist.name),
+        isExplicit: track.explicit,
+      }
+    }))
 
   }
 
@@ -47,11 +54,14 @@ class ContentColumn extends Component  {
     const artistIdExists = !isNil(this.props.albumIdExists);
     const albumIdExists = !isNil(this.props.albumId);
 
-    await this.updateCurrentAlbumSongListView()
 
-    return (this.props.artist == true && artistIdExists ) ? undefined : 
-              albumIdExists  ? this.props.navigation.navigate('AlbumSongList') :
-                undefined
+    if (this.props.artist == true && artistIdExists ){
+      return undefined;
+    }
+    else if(albumIdExists){
+      await this.updateCurrentAlbumSongListView()
+      this.props.navigation.navigate('AlbumPage');
+    }
   }
 
   render() {

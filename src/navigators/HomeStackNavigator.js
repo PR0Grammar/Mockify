@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
-import { Home, AlbumSongList } from '../components/screens';
+import { Home, AlbumPage } from '../components/screens';
 
 
 const routeConfigs = {
@@ -10,8 +10,8 @@ const routeConfigs = {
             header: null,
         }
     },
-    AlbumSongList: {
-        screen: AlbumSongList,
+    AlbumPage: {
+        screen: AlbumPage,
         navigationOptions: {
             header: null,
         }

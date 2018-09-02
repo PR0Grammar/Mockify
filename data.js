@@ -18,8 +18,7 @@ exports.getUserRecentlyPlayed = async (token) => {
             'Authorization': `Bearer ${token}`
         },
         params:{
-            limit: 10,
-            offset: 3,
+            limit: 50,
         }
     })
     .then(response => {

@@ -14,4 +14,4 @@ export {default as YourLibrary } from './YourLibrary';
 export {default as Login } from './Login';
 export {default as InitialLandingPage} from './InitialLandingPage';
 export {default as SplashPage} from './SplashPage';
-export {default as AlbumSongList} from './AlbumSongList';
+export {default as AlbumPage} from './AlbumPage';
