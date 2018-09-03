@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import MadeForUser from './MadeForUser';
 import MoreOfWhatYouLike from './MoreOfWhatYouLike';
-import RecommendedStations from './RecommendedStations';
+import JumpBackIn from './JumpBackIn';
 import YourHeavyRotation from './YourHeavyRotation';
 import RecentlyPlayed from './RecentlyPlayed';
 
@@ -18,7 +18,7 @@ class HomeContent extends Component {
         <RecentlyPlayed />
         <YourHeavyRotation />
         <MoreOfWhatYouLike />
-        <RecommendedStations />
+        <JumpBackIn />
       </ScrollView>
       </View>
     );

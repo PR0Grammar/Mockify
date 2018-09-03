@@ -12,6 +12,10 @@ exports.followers = (number) => {
     return numberFormat(number) + ' FOLLOWERS'
 }
 
+exports.numberOfTracks = (number) => {
+  return `${number} TRACKS`
+}
+
 exports.removeRepeatedObjs = (array, path, sizeLimit) => {
     let filteredArray = [];
 

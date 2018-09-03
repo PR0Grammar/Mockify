@@ -9,17 +9,12 @@ import {isEmpty} from 'lodash';
   Props:
     content - Takes array of objects and utilizes the following properties in each obj if present:
               {
-                index: int,
-                isArtist: boolean,
-                artistId: '',
-                albumId: '',
-                trackId: '',
-                artistName: '',
-                albumName:'',
-                artistImgUrl: '',
-                albumImgUrl: '',
-                artistDesc: '',
-                albumDesc: '',
+                index: '',
+                type: oneOf['artist', 'album', 'playlist'],
+                id: ''.
+                title: '',
+                desc: '',
+                imgUrl: '',
               }
 */
 
@@ -41,15 +36,22 @@ class ContentScrollRow extends Component {
 
   realContent() {
     return this.props.content.map(item => {
-      return item.isArtist ? <ContentColumn key={item.index} artistId={item.artistId} artist={true} caption={item.artistName} subCaption={item.artistDesc} imgUrl={item.artistImgUrl} /> : 
-        <ContentColumn key={item.index} albumId={item.albumId} caption={item.albumName} subCaption={item.albumDesc} imgUrl={item.albumImgUrl} />
+      return( <ContentColumn 
+                key={item.index} 
+                id={item.id} 
+                type={item.type} 
+                caption={item.title} 
+                subCaption={item.desc} 
+                imgUrl={item.imgUrl} 
+              />
+      )
     })
     
   }
   
   render() {
     return (
-      <ScrollView contentContainerStyle={styles.container} horizontal={true} >
+      <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={styles.container} horizontal={true} >
         { isEmpty(this.props.content) ? this.fillerContent() : this.realContent()}
       </ScrollView>
     );

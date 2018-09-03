@@ -15,7 +15,7 @@ class TrackList extends Component {
     render() {
         return(
             <View style={styles.container}>
-                {this.props.tracks.map(track => <Track title={track.trackName} isExplicit={track.isExplicit} caption={track.caption} />)}
+                {this.props.tracks.map(track => <Track key={track.trackName} title={track.trackName} isExplicit={track.isExplicit} caption={track.caption} />)}
             </View>
         )
     }

@@ -12,6 +12,18 @@ exports.getUserProfile = async (token) => {
     .catch(err => console.log(err));
 }
 
+exports.getFeaturedPlaylists = async (token) => {
+    return axios.get('https://api.spotify.com/v1/browse/featured-playlists', {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        return Promise.resolve(response.data)
+    })
+    .catch(err => console.log(err));
+}
+
 exports.getUserRecentlyPlayed = async (token) => {
     return axios.get('https://api.spotify.com/v1/me/player/recently-played', {
         headers: {
@@ -50,7 +62,6 @@ exports.getUserTopArtists = async (token) => {
         },
         params: {
             limit: 5,
-            offset: 3,
         }
     })
     .then(response => {
@@ -89,6 +100,21 @@ exports.getBrowseCategories = async (token) => {
         }, 
         params:{
             limit:50
+        }
+    })
+    .then(response => {
+        return Promise.resolve(response.data);
+    })
+    .catch(err => console.log(err));
+}
+
+exports.getRelatedArtists = async(token, artistId) => {
+    return axios.get(`https://api.spotify.com/v1/artists/${artistId}/related-artists`, {
+        headers:{
+            'Authorization': `Bearer ${token}`
+        }, 
+        params:{
+            limit:10
         }
     })
     .then(response => {

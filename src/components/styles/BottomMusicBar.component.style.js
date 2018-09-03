@@ -1,4 +1,3 @@
-
 import { StyleSheet, Dimensions } from 'react-native';
 import configStyle from '../../../config/style';
 

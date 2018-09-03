@@ -28,7 +28,7 @@ class ChangingBackgroundColor extends Component {
   render() {
     const interpolateColor = this.animatedValue.interpolate({
       inputRange: [0, 300],
-      outputRange: ['rgb(118,48,255)','rgb(191,127,191)']
+      outputRange: this.props.colorRange || ['rgb(118,48,255)','rgb(191,127,191)'],
     })
     const animatedStyle = {
       backgroundColor: interpolateColor,

@@ -17,10 +17,11 @@ import { getAlbumInfoById, getArtistInfoById } from '../../../data'
   Artist columns have circle imgs
 
   Props:
-  artist - boolean if artist
-  imgUrl - URL to image
-  caption- Caption of Column
-  subCaption - SubCaption of Column
+    id={item.id} 
+    type={item.type} 
+    caption={item.caption} 
+    subCaption={item.desc} 
+    imgUrl={item.imgUrl} 
 */
 
 class ContentColumn extends Component  {
@@ -29,7 +30,7 @@ class ContentColumn extends Component  {
   }
 
   async updateCurrentAlbumSongListView() {
-    const albumInfo =  await getAlbumInfoById(this.props.authToken, this.props.albumId);
+    const albumInfo =  await getAlbumInfoById(this.props.authToken, this.props.id);
     
     this.props.changeAlbumListArtistId(albumInfo.artists[0].id);
     this.props.changeAlbumListAlbumId(albumInfo.id);
@@ -51,16 +52,30 @@ class ContentColumn extends Component  {
   }
 
   async navigateTo() {
-    const artistIdExists = !isNil(this.props.albumIdExists);
-    const albumIdExists = !isNil(this.props.albumId);
+    if(isNil(this.props.id)) return;
 
+    const {navigate} = this.props.navigation;
 
-    if (this.props.artist == true && artistIdExists ){
-      return undefined;
-    }
-    else if(albumIdExists){
-      await this.updateCurrentAlbumSongListView()
-      this.props.navigation.navigate('AlbumPage');
+    switch(this.props.type){
+
+      case 'artist': {
+        return; //TODO
+        break;
+      }
+
+      case 'album': {
+        await this.updateCurrentAlbumSongListView();
+        navigate('AlbumPage');
+        break;
+      }
+
+      case 'playlist': {
+        return; //TODO
+        break;
+      }
+
+      default:
+        return;
     }
   }
 
@@ -68,7 +83,7 @@ class ContentColumn extends Component  {
     return(    
       <TouchableOpacity onPress={() => this.navigateTo()}>
         <View style={styles.container}>
-          {this.props.artist == true ? <CircleAlbumCard imgUrl={this.props.imgUrl} /> : <SquareAlbumCard imgUrl={this.props.imgUrl} />}
+          {this.props.type == 'artist' ? <CircleAlbumCard imgUrl={this.props.imgUrl} /> : <SquareAlbumCard imgUrl={this.props.imgUrl} />}
           <ColumnCaption caption={this.props.caption} />
           <ColumnSubCaption subCaption={this.props.subCaption} />
         </View>

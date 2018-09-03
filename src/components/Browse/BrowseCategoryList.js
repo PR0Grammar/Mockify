@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import { View, Text } from 'react-native'
+import { View, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
+import { isEmpty } from 'lodash';
 import { getBrowseCategories } from '../../../data';
+import styles from '../styles/BrowseCategoryList.component.style';
+import CategoryCard from './CategoryCard';
 
 class BrowseCategoryList extends Component {
     constructor(props){
@@ -39,13 +42,17 @@ class BrowseCategoryList extends Component {
      }
 
      renderCategory(category) {
-        return <Text style={{color:'white'}}>{category.name}</Text>
+        return( 
+            <CategoryCard key={category.key} category={category.name} />
+        );
      }
 
     render() {
         return(
-            <View>
-                {this.state.categories.map(item => this.renderCategory(item))}
+            <View style={styles.container}>
+                { isEmpty(this.state.categories) ? <ActivityIndicator size='large' /> :
+                    this.state.categories.map(item => this.renderCategory(item))
+                }
             </View>
         );
     }

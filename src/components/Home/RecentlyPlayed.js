@@ -27,35 +27,43 @@ class RecentlyPlayed extends Component {
   }
 
   async getUserRecentlyPlayedContent() {
-    let mostRecentPlayed = [];          
-    let index = 0;
+    let mostRecentPlayed = [];
+    let index = 0;          
 
     const recentlyPlayedContent = await getUserRecentlyPlayed(this.props.authToken).then(content => removeRepeatedObjs(content.items, 'context.uri', 20))
 
     for(item of recentlyPlayedContent){
-      let artistInfo = await getArtistInfoById(this.props.authToken, item.track.artists[0].id)
 
       let recentlyPlayed = {
-          index: index++,
-          isArtist: undefined,
-          artistId: undefined,
-          albumId: undefined,
-          trackId: undefined,
-          artistName: undefined,
-          albumName: undefined,
-          artistImgUrl: undefined,
-          albumImgUrl: undefined,
+          index: undefined,
+          type: undefined,
+          id: undefined,
+          title: undefined,
+          desc: undefined,
+          imgUrl: undefined,
       }
 
-      recentlyPlayed.isArtist = item.context === null || item.context.type != 'album' ? true : false;
-      recentlyPlayed.artistId = item.track.artists[0].id;
-      recentlyPlayed.albumId = item.track.album.id;
-      recentlyPlayed.trackId = item.track.id;
-      recentlyPlayed.artistName = item.track.artists[0].name
-      recentlyPlayed.albumName = item.track.album.name;
-      recentlyPlayed.albumImgUrl = item.track.album.images[1].url;
-      recentlyPlayed.artistImgUrl = artistInfo.images[1].url
-      recentlyPlayed.artistDesc = followers(artistInfo.followers.total)
+      if(item.context != null && item.context.type == 'artist') {
+        let artistInfo = await getArtistInfoById(this.props.authToken, item.track.artists[0].id);
+
+        recentlyPlayed.index = index++;
+        recentlyPlayed.type = 'artist'
+        recentlyPlayed.id = item.track.artists[0].id;
+        recentlyPlayed.title = item.track.artists[0].name;
+        recentlyPlayed.desc = followers(artistInfo.followers.total);
+        recentlyPlayed.imgUrl = artistInfo.images[1].url
+
+      }
+
+      else {
+        recentlyPlayed.index = index++;
+        recentlyPlayed.type = 'album'
+        recentlyPlayed.id = item.track.album.id;
+        recentlyPlayed.title = item.track.album.name;
+        recentlyPlayed.desc = ''
+        recentlyPlayed.imgUrl = item.track.album.images[1].url;
+      }
+
 
       mostRecentPlayed.push(recentlyPlayed)
       
