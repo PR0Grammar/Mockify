@@ -11,3 +11,4 @@ export { default as ContentRow } from './ContentRow';
 export { default as BottomMusicBar } from './BottomMusicBar';
 export { default as BackMenuHeader } from './BackMenuHeader';
 export { default as TrackList } from './TrackList';
+export { default as AudioStreamer } from './AudioStreamer';

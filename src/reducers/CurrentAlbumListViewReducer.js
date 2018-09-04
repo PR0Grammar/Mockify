@@ -11,6 +11,7 @@ const INIT_STATE = {
             trackName: '',
             artistNames: ['', ''],
             isExplicit: false,
+            url: '',
         }
     ]
 

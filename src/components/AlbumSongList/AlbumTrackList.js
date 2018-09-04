@@ -15,6 +15,7 @@ class AlbumTrackList extends Component {
                         trackName: track.trackName,
                         isExplicit: track.isExplicit,
                         caption: track.artistNames.join(', '),
+                        url: track.url,
                     }
                 })}
             />

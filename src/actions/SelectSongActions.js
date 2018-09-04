@@ -1,6 +1,6 @@
 import { CHANGE_CURRENT_TRACK_METADATA } from '../constants/actionTypes';
 
-const changeCurrentTrackMetadata = (trackMetadataObj) => {
+export const changeCurrentTrackMetadata = (trackMetadataObj) => {
     return {
         type: CHANGE_CURRENT_TRACK_METADATA,
         payload: trackMetadataObj

@@ -1,12 +1,12 @@
 import { CHANGE_CURRENT_TRACK_METADATA, ADD_CURRENT_TRACK_END_TIME } from '../constants/actionTypes';
 
 const INIT_STATE = {
-    trackId: '',
     trackTitle: '',
     trackArtist: '',
     trackAlbumTitle: '',
+    trackUrl: '',
     trackStartTime: 0,
-    trackEndTime: null,
+    trackEndTime: 30,
 }
 
 export default (state = INIT_STATE, action) => {
@@ -15,10 +15,10 @@ export default (state = INIT_STATE, action) => {
             return {
                 ...state,
                 ...{
-                    trackId: action.payload.trackId,
                     trackTitle: action.payload.trackTitle,
                     trackArtist: action.payload.trackArtist,
-                    trackAlbumTitle: action.payload.trackAlbumTitle
+                    trackAlbumTitle: action.payload.trackAlbumTitle,
+                    trackUrl: action.payload.trackUrl,
                 }
             }
         

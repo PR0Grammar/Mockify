@@ -31,7 +31,7 @@ class ContentColumn extends Component  {
 
   async updateCurrentAlbumSongListView() {
     const albumInfo =  await getAlbumInfoById(this.props.authToken, this.props.id);
-    
+
     this.props.changeAlbumListArtistId(albumInfo.artists[0].id);
     this.props.changeAlbumListAlbumId(albumInfo.id);
     this.props.changeAlbumListAlbumName(albumInfo.name);
@@ -42,6 +42,7 @@ class ContentColumn extends Component  {
         trackName: track.name,
         artistNames: track.artists.map(artist=> artist.name),
         isExplicit: track.explicit,
+        url: track.preview_url,
       }
     }))
 
