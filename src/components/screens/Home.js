@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import { Header, BottomMusicBar } from '../common';
 import HomeContent from '../Home/HomeContent';
 import configStyle from '../../../config/style';
@@ -12,6 +12,7 @@ class Home extends Component {
   render() {
     return (
       <View style={{flex:1, backgroundColor: configStyle.BLACK}}>
+        <StatusBar hidden />
         <Header title='Home' />
         <HomeContent />
         <BottomMusicBar/>

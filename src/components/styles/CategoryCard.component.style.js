@@ -9,6 +9,7 @@ export default StyleSheet.create({
         width: 175,
         margin: 5,
         borderRadius: 10,
+        opacity: 0.5,
     },
     text: {
         color: configStyle.WHITE,

@@ -5,6 +5,7 @@ A clone of Spotify using React Native
 
 ![Current Demo GIF](demo/PROGRESS.gif)
 ![DEMO GIF TWO](demo/PROGRESS2.gif)
+![Search Screenshot](demo/SEARCH_SS.png)
 
 ### Major dependencies/features
 

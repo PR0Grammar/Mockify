@@ -19,10 +19,10 @@ import styles from '../styles/HamburgerButton.component.style';
 const HamburgerButton = (props) => {
 
     const buttonColor = {backgroundColor: props.color || configStyle.SPOTIFY_GREEN };
-    const buttonSize = {width: props.small === true ? 140 : 300};
+    const buttonSize = {width: props.small ? 140 : props.medium ? 220: 300};
     const textColor ={color: props.textColor || configStyle.WHITE };
     const textSize = {fontSize: props.textSize || 16};
-    const buttonDisabled = {opacity: props.disabled == true ? 0.5 : 1};
+    const buttonDisabled = {opacity: props.disabled ? 0.5 : 1};
 
     return (
         <TouchableOpacity

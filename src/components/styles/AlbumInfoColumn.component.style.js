@@ -5,18 +5,26 @@ export default StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: configStyle.GRAY,
+        backgroundColor: configStyle.BLACK,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     albumNameText: {
         color: configStyle.WHITE,
         fontSize: 25,
-        fontFamily: 'Montserrat-SemiBold'
+        fontFamily: 'Montserrat-SemiBold',
+        marginTop: 5,
+        marginBottom:5,
     },
     artistNameText: {
         color: configStyle.TEXT_GRAY,
         fontFamily: 'Montserrat',
         fontSize: 10,
+        marginTop: 5,
+        marginBottom:5,
+    },
+    buttonContainer: {
+        marginTop: 5,
+        marginBottom:10,
     }
 });

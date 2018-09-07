@@ -6,7 +6,6 @@ import * as actions from '../../actions';
 import styles from '../styles/Track.component.style';
 import configStyle from '../../../config/style'
 import DotMenu from './DotMenu';
-import AudioStreamer from './AudioStreamer';
 
 class Track extends Component {
 

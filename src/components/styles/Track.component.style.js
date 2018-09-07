@@ -8,8 +8,9 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingLeft: 5,
-        paddingRight: 5
+        paddingLeft: 15,
+        paddingRight: 10,
+        marginBottom: 20,
     },
     trackInfoContainer:{
         display: 'flex',
