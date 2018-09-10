@@ -5,6 +5,7 @@ import MoreOfWhatYouLike from './MoreOfWhatYouLike';
 import JumpBackIn from './JumpBackIn';
 import YourHeavyRotation from './YourHeavyRotation';
 import RecentlyPlayed from './RecentlyPlayed';
+import MoreLike from './MoreLike';
 
 class HomeContent extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class HomeContent extends Component {
         <MadeForUser />
         <RecentlyPlayed />
         <YourHeavyRotation />
+        <MoreLike />
         <MoreOfWhatYouLike />
         <JumpBackIn />
       </ScrollView>

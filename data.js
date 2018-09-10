@@ -108,7 +108,7 @@ exports.getBrowseCategories = async (token) => {
     .catch(err => console.log(err));
 }
 
-exports.getRelatedArtists = async(token, artistId) => {
+exports.getRelatedArtists = async (token, artistId) => {
     return axios.get(`https://api.spotify.com/v1/artists/${artistId}/related-artists`, {
         headers:{
             'Authorization': `Bearer ${token}`
